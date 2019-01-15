@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Django Auth</title>
+    <title>User Login</title>
 </head>
 <body>
     <nav>
@@ -23,6 +23,10 @@
         {% endfor %}
     </div>
     {% endif %}
-
+<form method="POST">
+    {% csrf_token %}
+    {{ login_form }}
+    <button type="submit">Log In</button>
+</form>
 </body>
 </html>
